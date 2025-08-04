@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Projects - Charles Gitau Wairimu</title>
+  <link rel="stylesheet" href="styles.css"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
+</head>
+<body>
+  <header class="inner-page">
+    <div class="container">
+      <h1>Projects</h1>
+      <nav>
+        <a href="index.html">Home</a>
+        <a href="projects.html" class="active">Projects</a>
+        <a href="blog.html">Blog</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container projects">
+    <section>
+      <h2>DevOps & Cloud Projects</h2>
+
+      <div class="project">
+        <h3>Java DevOps with SonarQube</h3>
+        <p class="project-description">
+          Automated CI/CD pipeline for a Java Maven application using Jenkins, with integrated SonarQube for code quality analysis.
+        </p>
+        <div class="project-links">
+          <a href="https://github.com/Gitauwairimu/Java-DevOps-SonarQube" target="_blank">
+            <i class="fab fa-github"></i> View on GitHub
+          </a>
+        </div>
+        <div class="project-tags">Jenkins • Maven • AWS • SonarQube</div>
+      </div>
+
+      <div class="project">
+        <h3>CI/CD Blue-Green Deployment</h3>
+        <p class="project-description">
+          Built a CircleCI pipeline deploying to Kubernetes using a blue-green strategy. Provisioned infrastructure with Terraform, configured with Ansible.
+        </p>
+        <div class="project-links">
+          <a href="https://github.com/Gitauwairimu/cdond-c3-projectstarter" target="_blank">
+            <i class="fab fa-github"></i> View on GitHub
+          </a>
+        </div>
+        <div class="project-tags">CircleCI • Kubernetes • Terraform • Ansible</div>
+      </div>
+
+      <div class="project">
+        <h3>Cloud Resume Challenge</h3>
+        <p class="project-description">
+          Personal resume site deployed on AWS S3 with a CI/CD pipeline, Lambda backend, and visitor counter.
+        </p>
+        <div class="project-links">
+          <a href="https://github.com/Gitauwairimu/cloud-resume-challenge" target="_blank">
+            <i class="fab fa-github"></i> View on GitHub
+          </a>
+        </div>
+        <div class="project-tags">S3 • Lambda • DynamoDB • GitHub Actions</div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; <span id="year"></span> Charles Gitau Wairimu - DevOps Engineer</p>
+    <p>Contact: gitauwairimu@gmail.com | +254735669452</p>
+  </footer>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>

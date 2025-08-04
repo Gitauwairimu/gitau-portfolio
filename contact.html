@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Contact - Gitau Wairimu</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="inner-page">
+    <h1>Contact</h1>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="projects.html">Projects</a>
+      <a href="blog.html">Blog</a>
+      <a href="contact.html" class="active">Contact</a>
+    </nav>
+  </header>
+
+  <main class="container">
+    <h2>Get in Touch</h2>
+    <p>If you'd like to get in touch, feel free to send an email or connect through social media below.</p>
+
+    <form action="mailto:gitau@example.com" method="POST" enctype="text/plain">
+      <label for="name">Name:</label><br />
+      <input type="text" id="name" name="name" required><br /><br />
+
+      <label for="email">Email:</label><br />
+      <input type="email" id="email" name="email" required><br /><br />
+
+      <label for="message">Message:</label><br />
+      <textarea id="message" name="message" rows="6" required></textarea><br /><br />
+
+      <button type="submit">Send</button>
+    </form>
+
+    <div class="social-links">
+      <h3>Or find me here:</h3>
+      <a href="https://github.com/yourusername" target="_blank">GitHub</a>
+      <a href="https://linkedin.com/in/yourprofile" target="_blank">LinkedIn</a>
+    </div>
+  </main>
+
+  <footer>
+    <p>© 2025 Gitau Wairimu. All rights reserved.</p>
+  </footer>
+</body>
+</html>

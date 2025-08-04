@@ -1,0 +1,482 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Charles Gitau Wairimu - DevOps Engineer</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary-color: #3498db;
+            --secondary-color: #2c3e50;
+            --accent-color: #e74c3c;
+            --light-color: #ecf0f1;
+            --dark-color: #2c3e50;
+            --text-color: #333;
+            --text-light: #7f8c8d;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            line-height: 1.6;
+            color: var(--text-color);
+            background-color: #f9f9f9;
+        }
+        
+        a {
+            text-decoration: none;
+            color: var(--primary-color);
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* Header Styles */
+        header {
+            background-color: var(--secondary-color);
+            color: white;
+            padding: 2rem 0;
+            text-align: center;
+        }
+        
+        .profile-img {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 5px solid var(--primary-color);
+            margin-bottom: 1rem;
+        }
+        
+        .header-content h1 {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        .header-content h2 {
+            font-size: 1.5rem;
+            font-weight: 400;
+            margin-bottom: 1rem;
+            color: var(--primary-color);
+        }
+        
+        .contact-info {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 1rem;
+            margin-bottom: 1rem;
+        }
+        
+        .contact-info p {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+            margin-top: 1rem;
+        }
+        
+        .social-links a {
+            color: white;
+            font-size: 1.5rem;
+            transition: color 0.3s;
+        }
+        
+        .social-links a:hover {
+            color: var(--primary-color);
+        }
+        
+        /* Main Content Styles */
+        main {
+            padding: 2rem 0;
+        }
+        
+        section {
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            padding: 2rem;
+            margin-bottom: 2rem;
+        }
+        
+        section h2 {
+            color: var(--secondary-color);
+            margin-bottom: 1.5rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 2px solid var(--primary-color);
+        }
+        
+        .professional-summary p {
+            margin-bottom: 1rem;
+        }
+        
+        /* Skills Section */
+        .skills-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 1rem;
+        }
+        
+        .skill-category h3 {
+            margin-bottom: 0.5rem;
+            color: var(--primary-color);
+        }
+        
+        .skill-list {
+            list-style-type: none;
+        }
+        
+        .skill-list li {
+            margin-bottom: 0.5rem;
+            display: flex;
+            align-items: center;
+        }
+        
+        .skill-list li::before {
+            content: "▹";
+            color: var(--primary-color);
+            margin-right: 0.5rem;
+        }
+        
+        /* Projects Section */
+        .project {
+            margin-bottom: 1.5rem;
+        }
+        
+        .project h3 {
+            margin-bottom: 0.5rem;
+        }
+        
+        .project-links {
+            display: flex;
+            gap: 1rem;
+            margin-top: 0.5rem;
+        }
+        
+        /* Experience & Education */
+        .timeline {
+            position: relative;
+            padding-left: 30px;
+        }
+        
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 10px;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background-color: var(--primary-color);
+        }
+        
+        .timeline-item {
+            position: relative;
+            margin-bottom: 2rem;
+        }
+        
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -30px;
+            top: 5px;
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background-color: var(--primary-color);
+            border: 2px solid var(--secondary-color);
+        }
+        
+        .timeline-date {
+            font-weight: bold;
+            color: var(--primary-color);
+            margin-bottom: 0.5rem;
+        }
+        
+        .timeline-title {
+            font-weight: bold;
+            margin-bottom: 0.5rem;
+        }
+        
+        .timeline-subtitle {
+            font-style: italic;
+            color: var(--text-light);
+            margin-bottom: 0.5rem;
+        }
+        
+        .timeline-description {
+            margin-bottom: 0.5rem;
+        }
+        
+        /* Footer */
+        footer {
+            background-color: var(--secondary-color);
+            color: white;
+            text-align: center;
+            padding: 1.5rem 0;
+            margin-top: 2rem;
+        }
+        
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .header-content h1 {
+                font-size: 2rem;
+            }
+            
+            .header-content h2 {
+                font-size: 1.2rem;
+            }
+            
+            .contact-info {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .skills-container {
+                grid-template-columns: 1fr;
+            }
+        }
+
+
+        /* Header Nav Styles */
+.header-nav {
+  margin-top: 2rem;
+  border-top: 1px solid var(--light-color);
+  padding-top: 1rem;
+}
+
+.header-nav .nav-links {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  list-style: none;
+}
+
+.header-nav .nav-links li a {
+  color: white;
+  font-weight: 500;
+  transition: color 0.3s;
+}
+
+.header-nav .nav-links li a:hover {
+  color: var(--primary-color);
+}
+
+/* Responsive nav inside header */
+@media (max-width: 768px) {
+  .header-nav .nav-links {
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+  }
+}
+
+
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <img src="images/passport.png" alt="Charles Gitau Wairimu" class="profile-img">
+            <div class="header-content">
+            <h1>Charles Gitau Wairimu</h1>
+            <h2>DevOps Engineer</h2>
+            <div class="contact-info">
+                <p><i class="fas fa-map-marker-alt"></i> Thika, Kenya</p>
+                <p><i class="fas fa-mobile-alt"></i> +254735669452</p>
+                <p><i class="fas fa-envelope"></i> gitauwairimu@gmail.com</p>
+            </div>
+            <div class="social-links">
+                <a href="https://github.com/Gitauwairimu" target="_blank"><i class="fab fa-github"></i></a>
+                <a href="https://www.linkedin.com/in/gitauwairimu/" target="_blank"><i class="fab fa-linkedin"></i></a>
+            </div>
+            </div>
+
+            <!-- Navigation Bar inside header -->
+            <nav class="header-nav">
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="projects.html">Projects</a></li>
+                <li><a href="blog.html">Blog</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+            </nav>
+        </div>
+        </header>
+
+    
+    <main class="container">
+        <section class="professional-summary">
+            <h2>Professional Summary</h2>
+                <p>Results-driven <strong>Cloud DevOps Engineer</strong> with <strong>5+ years</strong> of experience architecting and optimizing cloud-native solutions on <strong>AWS</strong>. Specialized in designing <strong>highly available, auto-scaling infrastructure</strong> that reduces operational costs by 30-40% while improving system reliability.</p>
+        </section>
+        
+        <section class="skills">
+            <h2>Key Skills</h2>
+            <div class="skills-container">
+                <div class="skill-category">
+                    <h3>Cloud Technologies</h3>
+                    <ul class="skill-list">
+                        <li>AWS (EC2, S3, CloudFormation)</li>
+                        <li>Google Cloud Platform</li>
+                        <li>Infrastructure as Code</li>
+                        <li>Terraform</li>
+                    </ul>
+                </div>
+                <div class="skill-category">
+                    <h3>DevOps Tools</h3>
+                    <ul class="skill-list">
+                        <li>Ansible</li>
+                        <li>Jenkins </li>
+                        <li>Github Actions</li>
+                        <li>CircleCI</li>
+                        <li>Docker</li>
+                        <li>Kubernetes</li>
+                    </ul>
+                </div>
+                <div class="skill-category">
+                    <h3>Monitoring & Security</h3>
+                    <ul class="skill-list">
+                        <li>Prometheus</li>
+                        <li>Grafana</li>
+                        <li>Alertmanager</li>
+                        <li>SonarQube</li>
+                    </ul>
+                </div>
+                <div class="skill-category">
+                    <h3>Programming & Scripting</h3>
+                    <ul class="skill-list">
+                        <li>Python</li>
+                        <li>Linux Shell</li>
+                        <li>Terraform</li>
+                    </ul>
+                </div>
+                <div class="skill-category">
+                    <h3>Certifications</h3>
+                    <ul class="skill-list">
+                        <li>AWS Practitioner</li>
+                        <li>Kubernetes and Cloud Native Associate</li>
+                        <li>Certified Kubernetes Administrator</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+        
+        <!-- <section class="projects">
+            <h2>Showcase Projects</h2>
+            <div class="project">
+                <h3>Java DevOps SonarQube</h3>
+                <p>Deployed automated Java Maven CI/CD pipeline on AWS infrastructure using Jenkins.</p>
+                <div class="project-links">
+                    <a href="https://github.com/Gitauwairimu/Java-DevOps-SonarQube" target="_blank"><i class="fab fa-github"></i> View on GitHub</a>
+                </div>
+            </div>
+            <div class="project">
+                <h3>CI/CD Blue Green Deployment</h3>
+                <p>Configured and implemented CI/CD pipeline using CircleCI, and Kubernetes. Utilized blue-green deployment strategy for reduced downtime and high availability. Terraform for provisioning and Ansible for configuring the deployment server.</p>
+                <div class="project-links">
+                    <a href="https://github.com/Gitauwairimu/cdond-c3-projectstarter" target="_blank"><i class="fab fa-github"></i> View on GitHub</a>
+                </div>
+            </div>
+        </section>
+         -->
+        <section class="education">
+            <h2>Education</h2>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-date">September 2022 - March 2023</div>
+                    <h3 class="timeline-title">Associate Cloud Engineer Trainee</h3>
+                    <p class="timeline-subtitle">Andela Learning Community</p>
+                    <ul class="timeline-description">
+                        <li>Provisioned and configured Infrastructure as Code on Google Cloud</li>
+                        <li>Implementing monitoring with Prometheus, Alertmanager and Grafana dashboards</li>
+                    </ul>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-date">May 2022 - August 2022</div>
+                    <h3 class="timeline-title">ALX-T Cloud DevOps Engineer</h3>
+                    <p class="timeline-subtitle">Udacity</p>
+                    <ul class="timeline-description">
+                        <li>Deployed Docker and Kubernetes for seamless deployment on AWS</li>
+                        <li>Implemented Infrastructure as Code, Ansible, and CircleCI to streamline CI/CD automation pipelines</li>
+                        <li>Configured Prometheus, Alertmanager, and Grafana to monitor system performance</li>
+                    </ul>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-date">September 2008 - December 2014</div>
+                    <h3 class="timeline-title">BSc in Foods, Nutrition and Dietetics</h3>
+                    <p class="timeline-subtitle">Egerton University, Kenya</p>
+                </div>
+            </div>
+        </section>
+        
+        <section class="experience">
+            <h2>Work Experience</h2>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-date">January 2023 - Present</div>
+                    <h3 class="timeline-title">Production General Worker</h3>
+                    <p class="timeline-subtitle">DelMonte Agriculture PackHouse</p>
+                    <ul class="timeline-description">
+                        <li>Increased productivity by 15% by matching workers with tasks based on their skills and speed.</li>
+                        <li>Created and maintaining detailed documentation to ensure smooth handovers between teams</li>
+                        <li>Prepared, weighed, and packaged fresh beans for shipment, ensuring compliance with quality control standards and optimal storage temperatures to maintain freshness and maximize shelf-life.</li>
+                    </ul>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-date">March 2017 - Present (Part-time)</div>
+                    <h3 class="timeline-title">Volunteer Administrative Officer</h3>
+                    <p class="timeline-subtitle">Greystone Primary School</p>
+                    <ul class="timeline-description">
+                        <li>Responsible for improving pupil intake by over 100% and onboarding eight teachers in three years.</li>
+                    </ul>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-date">February 2015 – March 2017</div>
+                    <h3 class="timeline-title">Nutrition Officer</h3>
+                    <p class="timeline-subtitle">Murang'a County</p>
+                    <ul class="timeline-description">
+                        <li>Improved exclusive breastfeeding rates by 30% over 2 years</li>
+                        <li>Delivered nutrition services, and mentored new staff while coordinating policy implementation.</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+        
+        <section class="interests">
+            <h2>Skills & Interests</h2>
+            <ul class="skill-list">
+                <li>Continuous learning online courses</li>
+                <li>Tech meetups</li>
+                <li>Microservices architecture</li>
+                <li>Certified Kubernetes Administrator</li>
+            </ul>
+        </section>
+    </main>
+    
+    <footer>
+        <div class="container">
+            <p>&copy; <span id="year"></span> Charles Gitau Wairimu - DevOps Engineer</p>
+            <p>Contact: gitauwairimu@gmail.com | +254735669452</p>
+        </div>
+    </footer>
+    
+    <script>
+        // Set current year in footer
+        document.getElementById('year').textContent = new Date().getFullYear();
+    </script>
+</body>
+</html>
